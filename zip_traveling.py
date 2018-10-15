@@ -37,11 +37,11 @@ class ZipScheduler:
 
     def hospitals_location(file):
         with open(file, 'r') as csvfile:
-            reader = csv.DictReader(csvfile)  # expect values to be separated by a coma by default
+            reader_order = csv.reader(csvfile)  # expect values to be separated by a coma by default
             # next(reader)                    # skip the first line if we had title on the csv file
-            for line in reader:
+            for line in reader_order:
                 return line
 
-ZipScheduler.hospitals_location('hospitals.csv')
+print(ZipScheduler.hospitals_location('hospitals.csv'))
 
                 
