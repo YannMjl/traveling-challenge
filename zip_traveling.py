@@ -42,7 +42,8 @@ class ZipScheduler:
         with open(file, 'r') as csvfile:
             reader_order = csv.reader(csvfile)  # expect values to be separated by a coma by default
             # next(reader)                      # skip the first line if we had title on the csv file
-            for line in reader_order:
+            for line in reader_order:           
+                # add extra operation for 'Resupply' and 'Emergency' priority
                 order_list.append(line)
         return order_list
 
@@ -61,14 +62,18 @@ class ZipScheduler:
         for item in orders:
             print(item[2])
 
+    def schedule_next_flight(current_time):
+        print('add operation for next schedule')
+        pass
         
-    def do_something(): 
-        print("Doing stuff...")
-        # do your stuff
-        time.sleep(10)
+    def schedule_flight(): 
+        print("call schedule next flight function every 60 sec")
+        # call function here
+        #ZipScheduler.schedule_next_flight()
+        time.sleep(60)
 
 while True:
-    ZipScheduler.do_something()
+    ZipScheduler.schedule_flight()
 
 #ZipScheduler.store_order('orders.csv')
 #ZipScheduler.queue_order()
