@@ -35,13 +35,15 @@ class ZipScheduler:
 
     order_queue = PriorityQueue()
 
-    def hospitals_location(file):
+    def read_order(file):
+        order_list = []                         # init an empty that store order read from the csv file 
         with open(file, 'r') as csvfile:
             reader_order = csv.reader(csvfile)  # expect values to be separated by a coma by default
-            # next(reader)                    # skip the first line if we had title on the csv file
+            # next(reader)                      # skip the first line if we had title on the csv file
             for line in reader_order:
-                return line
+                order_list.append(line)
+        return order_list
 
-print(ZipScheduler.hospitals_location('hospitals.csv'))
+print(ZipScheduler.read_order('hospitals.csv'))
 
                 
