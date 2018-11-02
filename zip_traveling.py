@@ -17,6 +17,7 @@
 #------------------------------------------------------------------------------------------------------#
 
 # solution concept:
+
 # tradeoff: oder priority over distance since there is a potential life saving
 # scenario for emergency orders
 
@@ -49,6 +50,7 @@ class ZipScheduler:
 
     ## we are going to check for each order in the file. add order on top of the list if it has Emergency 
     ## priority and the largest number of second(meaning an order was made earlier than an other)
+    
     def store_order(file):
         orders = ZipScheduler.read_order(file)
         for i in range(len(orders)):
