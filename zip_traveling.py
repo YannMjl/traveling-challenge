@@ -39,10 +39,10 @@ class ZipScheduler:
     list_of_order = []
 
     def read_order(file):
-        order_list = ZipScheduler.list_of_order                         # init an empty that store order read from the csv file 
+        order_list = ZipScheduler.list_of_order         # init an empty that store order read from the csv file 
         with open(file, 'r') as csvfile:
-            reader_order = csv.reader(csvfile)  # expect values to be separated by a coma by default
-            # next(reader)                      # skip the first line if we had title on the csv file
+            reader_order = csv.reader(csvfile)          # expect values to be separated by a coma by default
+            # next(reader)                              # skip the first line if we had title on the csv file
             for line in reader_order:           
                 # add extra operation for 'Resupply' and 'Emergency' priority
                 order_list.append(line)
